@@ -31,6 +31,8 @@ func main(){
 	fmt.Println("\nEnter the number of tickets you want:")
 	fmt.Scan(&userTickets)
 
-	fmt.Printf("\nThank You %v %v,\n%v tickets will be sent to your email: %v shortly.\n", firstName, lastName, userTickets, email)
+	remainigTickets = remainigTickets - userTickets
 
+	fmt.Printf("\nThank You %v %v,\n%v tickets will be sent to your email: %v shortly.\n", firstName, lastName, userTickets, email)
+	fmt.Printf("\nRemainig Tickets: %v\n", remainigTickets)
 }
