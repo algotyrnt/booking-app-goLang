@@ -15,7 +15,7 @@ func main(){
 	fmt.Printf("We have a total of %v tickets out of %v tickets.\n", remainigTickets, conferenceTickets)
 	fmt.Println("Get your tickets here to attend")
 
-	for {
+	for remainigTickets > 0 {
 
 		var firstName string
 		var lastName string
@@ -40,16 +40,14 @@ func main(){
 		}
 
 		remainigTickets = remainigTickets - userTickets
-		bookings = append(bookings, firstName + " " + lastName)
+		bookings = append(bookings, firstName + " " + lastName + " - " + fmt.Sprint(userTickets))
 
 		fmt.Printf("\nThank You %v %v,\n%v tickets will be sent to your email: %v shortly.\n", firstName, lastName, userTickets, email)
 		fmt.Printf("\nRemainig Tickets: %v\n", remainigTickets)
-		fmt.Printf("Bookings: %v\n", bookings)
-
-		if remainigTickets == 0 {
-			fmt.Println("No tickets availbale.")
-			break
-		}
 
 	}
+
+	fmt.Println("No tickets availbale, exiting the program.")
+	fmt.Printf("Bookings: %v\n", bookings)
+
 }
